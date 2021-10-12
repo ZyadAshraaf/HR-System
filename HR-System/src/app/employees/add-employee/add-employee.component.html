@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <div class="card col-lg-10 col-12 m-auto darkCard text-center p-3">
+        <h2 class="text-primary pb-2">Add an employee</h2>
+        <div class="card-body">
+            <div class="form-group">
+                <input type="text" placeholder="name" class="form-control" required #name="ngModel" [(ngModel)]="model.name">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="username" class="form-control" required #username="ngModel" [(ngModel)]="model.username">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="email" class="form-control" required #email="ngModel" [(ngModel)]="model.email">
+            </div>
+            <div class="form-group">
+                <input type="text" placeholder="phone" class="form-control" required #phone="ngModel" [(ngModel)]="model.phone">
+            </div>
+            <div class=" form-group ">
+                <input type="text " placeholder="department " class="form-control " required #department="ngModel" [(ngModel)]="model.Department">
+            </div>
+            <div *ngIf="name.errors==null && username.errors==null && email.errors==null && phone.errors==null && department.errors==null">
+                <button class="btn  btn-primary w-50" (click)="addEmployee()"> Add now</button>
+            </div>
+            <div *ngIf="name.errors!=null || username.errors!=null || email.errors!=null || phone.errors!=null || department.errors!=null">
+                <button disabled class="btn btn-primary w-50"> Add now</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,27 @@
+<div class="container mt-5">
+    <div class="card p-3 text-center darkCard">
+        <h2 class="text-primary pb-2">Employees Data</h2>
+        <div class="table-responsive">
+            <table class="table bg-dark text-white rounded-lg">
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Department</th>
+                    <th>Delete</th>
+                    <th>Edit</th>
+                </tr>
+                <tr *ngFor="let employee of employeesData">
+                    <td>{{employee.name}}</td>
+                    <td>{{employee.username}}</td>
+                    <td>{{employee.email}}</td>
+                    <td>{{employee.phone}}</td>
+                    <td>{{employee.Department}}</td>
+                    <td><a class="btn btn-success" routerLink="/editEmployee/{{employee.id}}">Edit</a></td>
+                    <td><button class="btn btn-danger" (click)="deleteEmployee(employee.id)">Delete</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

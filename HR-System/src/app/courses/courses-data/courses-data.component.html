@@ -1,0 +1,41 @@
+<div class="container mt-5">
+    <div class="row justify-content-around">
+        <div *ngFor="let course of coursesData">
+            <div class="card m-1 darkCard" style="width: 18rem; height: 350px;">
+                <img [src]="course.imgUrl" class="card-img-top w-100 h-50" alt="...">
+                <div class="card-body">
+                    <h6 class="card-text">Cousre name : {{course.name}}</h6>
+                    <p class="card-text">Instructor name :
+                        <a class="text-info text-decoration-none" data-toggle="modal" data-target="#exampleModal" (click)="showInsData(course.id)">{{course.instructor}}</a>
+                    </p>
+                    <p class="card-text">Price : {{course.price}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal  fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered w-25">
+        <div class="modal-content darkCard card">
+            <div class="modal-header border-bottom-0">
+                <h5 class="modal-title" id="exampleModalLabel">{{model.instructor}}</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="text-white">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body border-bottom-0 text-center">
+                <img [src]="model.instructorImg" class="w-75" alt="">
+                <h6 class="mt-4"> Name : {{model.instructor}}</h6>
+                <p>Job title : {{model.instructorJob}}</p>
+                <p>Age : {{model.instructorAge}} years</p>
+                <p>Expirence : {{model.instructorExp}} years</p>
+                <p>Phone : {{model.instructorPhone}}</p>
+            </div>
+            <div class="modal-footer border-top-0">
+                <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>

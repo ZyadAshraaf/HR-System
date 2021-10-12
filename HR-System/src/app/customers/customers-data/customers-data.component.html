@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <div class="card p-3 text-center darkCard">
+        <h2 class="text-primary pb-2">Customers Data</h2>
+        <div class="table-responsive">
+            <table class="table bg-dark text-white rounded-lg">
+                <tr>
+                    <th>Name</th>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr *ngFor="let customer of customersData">
+                    <th>{{customer.name}}</th>
+                    <th>{{customer.username}}</th>
+                    <th>{{customer.email}}</th>
+                    <th>{{customer.phone}}</th>
+                    <th><a class="btn btn-success" routerLink="/editCustomer/{{customer.id}}">Edit</a></th>
+                    <th><button class="btn btn-danger " (click)="deleteCustomer(customer.id) ">Delete</button></th>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
